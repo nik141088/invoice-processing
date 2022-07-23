@@ -54,15 +54,15 @@ if not os.path.exists(root_dir):
 # all the duplicates are saved in duplicates_dir. Duplicates are saved wrt each invoice.
 # inv_done_dir is used to cache invoices as and when all their duplicates are updated. This is required so that one can pick up dup checking from where they left
 invoice_dir = root_dir + "sample_invoices\\"
-img_embeddings_dir = root_dir + ".img_emb\\"
-txt_embeddings_dir = root_dir + ".txt_emb\\"
-words_and_boxes_dir = root_dir + ".words_and_boxes\\"
-duplicates_dir = root_dir + ".duplicates\\"
-inv_done_dir = root_dir + ".invDone\\"
+img_embeddings_dir = root_dir + "_img_emb\\"
+txt_embeddings_dir = root_dir + "_txt_emb\\"
+words_and_boxes_dir = root_dir + "_words_and_boxes\\"
+duplicates_dir = root_dir + "_duplicates\\"
+inv_done_dir = root_dir + "_invDone\\"
 
 # prev_loop_iter_file is a keyed stack, i.e. its a stack which also checks for entered key.
 # This is used to keep track of sequence of invoices that the user has checked. We use this to go back to earlier invoice!
-prev_loop_iter_file = root_dir + '.prev_i'
+prev_loop_iter_file = root_dir + '_prev_i'
 if not os.path.exists(prev_loop_iter_file):
     with open(prev_loop_iter_file, 'wb') as fp:
         curr_inv = ''
