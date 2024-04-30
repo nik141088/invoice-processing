@@ -43,22 +43,21 @@ local_css("app/style/style.css")
 lottie_invoice = load_lottieurl("https://assets2.lottiefiles.com/packages/lf20_g07hYi.json")
 
 
-
 # all directories are defined relative to root_dir. If in future the app is moved to a different folder, then only root_dir needs to be changed!
-root_dir = "C:\\Users\\nikhi\\invoice-processing\\data\\"
+root_dir = 'C:/Users/nikhi/Dropbox/GitHub/invoice-processing/data/'
 if not os.path.exists(root_dir):
-    assert False
+    raise Exception('Root directory not found!')
 
 # all the invoices are present in invoice_dir.
 # We use img_embeddings_dir to create image imbeddings for all the images
 # all the duplicates are saved in duplicates_dir. Duplicates are saved wrt each invoice.
 # inv_done_dir is used to cache invoices as and when all their duplicates are updated. This is required so that one can pick up dup checking from where they left
-invoice_dir = root_dir + "sample_invoices\\"
-img_embeddings_dir = root_dir + "_img_emb\\"
-txt_embeddings_dir = root_dir + "_txt_emb\\"
-words_and_boxes_dir = root_dir + "_words_and_boxes\\"
-duplicates_dir = root_dir + "_duplicates\\"
-inv_done_dir = root_dir + "_invDone\\"
+invoice_dir = root_dir + 'sample_invoices/'
+img_embeddings_dir = root_dir + '_img_emb/'
+txt_embeddings_dir = root_dir + '_txt_emb/'
+words_and_boxes_dir = root_dir + '_words_and_boxes/'
+duplicates_dir = root_dir + '_duplicates/'
+inv_done_dir = root_dir + '_invDone/'
 
 # prev_loop_iter_file is a keyed stack, i.e. its a stack which also checks for entered key.
 # This is used to keep track of sequence of invoices that the user has checked. We use this to go back to earlier invoice!
